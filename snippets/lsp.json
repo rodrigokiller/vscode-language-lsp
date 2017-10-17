@@ -1,0 +1,302 @@
+{
+  "Inicio fim": {
+  "prefix": "Inicio",
+  "body": [
+    "Inicio",
+    "\t$1",
+    "Fim;"
+  ],
+  "description": "Inicio fim"
+  },
+  
+  "senao": {
+  "prefix": "senao",
+  "body": [
+    "senao {",    
+    "\t$0",
+    "}"
+  ],
+  "description": "senao { }"
+  },
+  
+  "para inicio fim": {
+  "prefix": "parai",
+  "body": [
+    "para (${1:x} = ${2:0}; ${1:x} < ${3:max}, ${1:x}++)",
+    "Inicio",
+    "\t$0",
+    "Fim;"
+  ],
+  "description": "para inicio fim"
+  },
+  
+  "para (sem inicio e fim)": {
+  "prefix": "para",
+  "body": [
+    "para (${1:x} = ${2:0}; ${1:x} < ${3:max}, ${1:x}++) {",    
+    "\t$0",
+    "}"
+  ],
+  "description": "para (sem inicio e fim)"
+  },
+  
+  "definir funcao inicio fim": {
+  "prefix": "definir funcao inicio",
+  "body": [
+    "Definir Funcao ${1:MinhaFuncao} ();",
+    "Funcao ${1:MinhaFuncao} ();",
+    "Inicio",
+    "\t$0",
+    "Fim;"
+  ],
+  "description": "Definir funcao inicio fim"
+  },
+
+  "definir funcao": {
+    "prefix": "definir funcao",
+    "body": [
+      "Definir Funcao ${1:MinhaFuncao} ();",
+      "Funcao ${1:MinhaFuncao} (); {",      
+      "\t$0",
+      "Fim;"
+    ],
+    "description": "Definir funcao (sem inicio e fim)"
+  },  
+
+  "funcao inicio fim": {
+    "prefix": "funcao inicio",
+    "body": [      
+      "Funcao ${1:MinhaFuncao} (); {",      
+      "\t$0",
+      "Fim;"
+    ],
+    "description": "Definir funcao (sem inicio e fim)"
+  }, 
+
+  "funcao": {
+    "prefix": "funcao",
+    "body": [      
+      "Funcao ${1:MinhaFuncao} (); {",      
+      "\t$0",
+      "}"
+    ],
+    "description": "Definir funcao (sem inicio e fim)"
+  },  
+  
+  "se (sem inicio e fim)": {
+  "prefix": "se",
+  "body": [
+    "Se (${1:Condicao}) {",
+    "\t$0",
+    "}"
+  ],
+  "description": "se (sem inicio e fim)"
+  },
+  
+  "se inicio fim": {
+  "prefix": "se inicio fim",
+  "body": [
+    "se (${1:Condicao})",
+    "Inicio",
+    "\t$0",
+    "Fim;"
+  ],
+  "description": "se inicio fim"
+  },
+  
+  
+  "se senao (sem inicio e fim)": {
+  "prefix": "se senao",
+  "body": [
+    "Se (${1:Condicao}) {",
+    "\t${2:então}",
+    "}",
+    "Senao {",
+    "\t${3:senão}",
+    "}"
+  ],
+  "description": "se senao (sem inicio e fim)"
+  },
+  
+  "se senao inicio fim": {
+  "prefix": "se senao inicio fim",
+  "body": [
+    "Se (${1:Condicao})",
+    "Inicio",
+    "\t${2:então}",
+    "Fim",
+    "Senao",
+    "Inicio",
+    "\t${3:senão}",
+    "Fim;"
+  ],
+  "description": "se senao inicio fim"
+  },
+
+  // SQL Avançado
+  "SQL_Criar completo": {
+    "prefix": "SQL_Criar completo",
+    "body": [
+      "SQL_Criar(${1:cBusCur});",
+      "SQL_UsarSqlSenior2(${1:cBusCur}, 0);",
+      "SQL_UsarAbrangencia(${1:cBusCur}, 0);",      
+      "SQL_DefinirComando(${1:cBusCur}, ${2:aSqlCur});",            
+      "SQL_AbrirCursor(${1:cBusCur});",
+      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)",            
+      "\tSQL_Proximo(${1:cBusCur});",
+      "}",
+      "SQL_FecharCursor(${1:cBusCur});",
+      "SQL_Destruir(${1:cBusCur});"
+    ],
+    "description": "SQL_Criar: Criação Completa"
+  },
+  "SQL_Criar": {
+    "prefix": "SQL_Criar",
+    "body": [
+      "SQL_Criar(${1:cBusCur});",
+      "SQL_UsarSqlSenior2(${1:cBusCur}, 0);",
+      "SQL_UsarAbrangencia(${1:cBusCur}, 0);"     
+    ],
+    "description": "SQL_Criar(Cursor)"
+  },
+  "SQL_DefinirInteiro": {
+    "prefix": "SQL_DefinirInteiro",
+    "body": [
+      "SQL_DefinirInteiro(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"
+    ],
+    "description": "SQL_DefinirInteiro(Cursor, \"Coluna\", Variavel entrada)"
+  },
+  "SQL_DefinirAlfa": {
+    "prefix": "SQL_DefinirAlfa",
+    "body": [
+      "SQL_DefinirAlfa(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_DefinirAlfa(Cursor, \"Coluna\", Variavel entrada)"
+  },
+  "SQL_DefinirData": {
+    "prefix": "SQL_DefinirData",
+    "body": [
+      "SQL_DefinirData(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_DefinirData(Cursor, \"Coluna\", Variavel entrada)"
+  },
+  "SQL_DefinirFlutuante": {
+    "prefix": "SQL_DefinirFlutuante",
+    "body": [
+      "SQL_DefinirFlutuante(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_DefinirFlutuante(Cursor, \"Coluna\", Variavel entrada)"
+  },
+  "SQL_DefinirComando": {
+    "prefix": "SQL_DefinirComando",
+    "body": [
+      "SQL_DefinirComando(${1:cBusCur}, ${2:aQrySql});"  
+    ],
+    "description": "SQL_DefinirComando(Cursor, Comando SQL)"
+  },
+  "SQL_AbrirCursor se": {
+    "prefix": "SQL_AbrirCursor se",
+    "body": [
+      "SQL_AbrirCursor(${1:cBusCur});",
+      "Se(SQL_EOF(${1:cBusCur}) = 0)",      
+      "\tSQL_Proximo(${1:cBusCur});",
+      "}",
+      "SQL_FecharCursor(${1:cBusCur});"
+    ],
+    "description": "SQL_AbrirCursor(Cursor): Abre e fecha o cursor, colocando um 'se' no meio"
+  },
+  "SQL_AbrirCursor enquanto": {
+    "prefix": "SQL_AbrirCursor enquanto",
+    "body": [
+      "SQL_AbrirCursor(${1:cBusCur});",
+      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)",      
+      "\tSQL_Proximo(${1:cBusCur});",
+      "}",
+      "SQL_FecharCursor(${1:cBusCur});"
+    ],
+    "description": "SQL_AbrirCursor(Cursor): Abre e fecha o cursor, colocando um 'enquanto' no meio"
+  },
+  "SQL_AbrirCursor": {
+    "prefix": "SQL_AbrirCursor",
+    "body": [
+      "SQL_AbrirCursor(${1:cBusCur});"
+    ],
+    "description": "SQL_AbrirCursor(Cursor): Abre o cursor"
+  },
+  "SQL_EOF": {
+    "prefix": "SQL_EOF",
+    "body": [
+      "SQL_EOF(${1:cBusCur})"  
+    ],
+    "description": "SQL_EOF(Cursor): Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
+  },
+
+  "SQL_EOF se": {
+    "prefix": "SQL_EOF se",
+    "body": [
+      "Se (SQL_EOF(${1:cBusCur}) = 0) {",
+      "\t$0",
+      "}"    
+    ],
+    "description": "SQL_EOF(Cursor) com se: Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
+  },
+  "SQL_EOF enquanto": {
+    "prefix": "SQL_EOF enquanto",
+    "body": [
+      "Enquanto (SQL_EOF(${1:cBusCur}) = 0) {",
+      "\t$0",
+      "\tSQL_Proximo(${1:cBusCur});",
+      "}"    
+    ],
+    "description": "SQL_EOF(Cursor) com enquanto: Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
+  },
+  "SQL_RetornarInteiro": {
+    "prefix": "SQL_RetornarInteiro",
+    "body": [
+      "SQL_RetornarInteiro(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"
+    ],
+    "description": "SQL_RetornarInteiro(Cursor, \"Coluna\", Variavel retorno)"
+  },
+  "SQL_RetornarAlfa": {
+    "prefix": "SQL_RetornarAlfa",
+    "body": [
+      "SQL_RetornarAlfa(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_RetornarAlfa(Cursor, \"Coluna\", Variavel retorno)"
+  },
+  "SQL_RetornarData": {
+    "prefix": "SQL_RetornarData",
+    "body": [
+      "SQL_RetornarData(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_RetornarData(Cursor, \"Coluna\", Variavel retorno)"
+  },
+  "SQL_RetornarFlutuante": {
+    "prefix": "SQL_RetornarFlutuante",
+    "body": [
+      "SQL_RetornarFlutuante(${1:cBusCur}, \"${2:Coluna_SQL}\", ${3:vVlrRet});"  
+    ],
+    "description": "SQL_RetornarFlutuante(Cursor, \"Coluna\", Variavel retorno)"
+  },
+  "SQL_Proximo": {
+    "prefix": "SQL_Proximo",
+    "body": [
+      "SQL_Proximo(${1:cBusCur});"    
+    ],
+    "description": "SQL_Proximo(Cursor): Avança para o próximo registro."
+  },
+  "SQL_FecharCursor": {
+    "prefix": "SQL_FecharCursor",
+    "body": [
+      "SQL_FecharCursor(${1:cBusCur});"
+    ],
+    "description": "SQL_FecharCursor(Cursor): Fecha o cursor"
+  },
+  "SQL_Destruir": {
+    "prefix": "SQL_Destruir",
+    "body": [
+      "SQL_Destruir(${1:cBusCur});"
+    ],
+    "description": "SQL_Destruir(Cursor): Destrói o cursor"
+  }
+}

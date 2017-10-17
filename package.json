@@ -1,0 +1,44 @@
+{
+	"name": "lsp",
+	"version": "0.1.0",
+	"publisher": "Killer",
+	"engines": { "vscode": "*" },	
+	"categories": [
+		"Languages",
+		"Snippets",
+		"Formatters",
+		"Other"
+	],
+	"keywords": [
+		"lsp",
+		"senior",
+		"formatter"
+	],
+	"icon": "images/icon.png",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"homepage": "https://github.com/rodrigokiller/vscode-language-lsp/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rodrigokiller/vscode-language-lsp.git"
+	},
+	"bugs": {
+		"url": "https://github.com/rodrigokiller/vscode-language-lsp/issues"
+	},
+	"contributes": {
+		"languages": [{
+			"id": "lsp",
+			"extensions": [ ".txt"],
+			"aliases": [ "lsp", "Linguagem Senior de Programação", "Senior" ],
+			"configuration": "./language-configuration.json"
+		}],
+		"snippets": [{
+				"language": "lsp",
+				"path": "./snippets/lsp.json"
+		}],
+		"grammars": [{
+			"language": "lsp",
+			"scopeName": "source.lsp",
+			"path": "./syntaxes/lsp.tmLanguage"
+		}]
+	}
+}
