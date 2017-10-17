@@ -41,13 +41,7 @@
             <string>(?<!\.)\b(e|ou)\b</string>
             <key>name</key>
 			<string>keyword.operator.lsp</string>
-        </dict>	
-        <dict>
-            <key>match</key>
-            <string>\+|-|\*|\/|==?|<>|<=?|>=?|<==?|>==?</string>
-            <key>name</key>
-			<string>keyword.operator.lsp</string>
-        </dict>	
+        </dict>	        
         <dict>
 			<key>begin</key>
 			<string>(^[ \t]+)?(?=@)</string>
