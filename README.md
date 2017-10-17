@@ -15,13 +15,13 @@ Aperte `F1` no VSCode, digite `ext install` e então procure por `Language LSP`.
 
 Suporta colorização total de todas as funções, métodos, variáveis de sistema e palavras-chave para o LSP
 
-![syntax](https://github.com/rodrigokiller/vscode-language-lsp/raw/master/images/vscode-lsp-syntax.png)
+![syntax](https://github.com/rodrigokiller/vscode-language-lsp/raw/master/images/vscode-lsp-syntax_.png)
 
 ## Snippets
 
 Quase 20 snippets disponíveis, com mais sinppets vindo aí:
 
-![snippets](https://github.com/rodrigokiller/vscode-language-lsp/raw/master/images/vscode-lsp-snippets.png)
+![snippets](https://github.com/rodrigokiller/vscode-language-lsp/raw/master/images/vscode-lsp-snippets_.png)
 
 # Licensa
 
