@@ -23,7 +23,7 @@ Quase 20 snippets disponíveis, com mais sinppets vindo aí:
 
 ![snippets](https://github.com/rodrigokiller/vscode-language-lsp/raw/master/images/vscode-lsp-snippets_.png)
 
-# Licensa
+# Licença
 
 [MIT](https://github.com/rodrigokiller/vscode-language-lsp/blob/master/LICENSE.md) &copy; Rodrigo Sanguanini
 
