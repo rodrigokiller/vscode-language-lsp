@@ -1,149 +1,71 @@
 {
-  "Inicio fim": {
-  "prefix": "Inicio",
-  "body": [
-    "Inicio",
-    "\t$1",
-    "Fim;"
-  ],
-  "description": "Inicio fim"
+  "para": {
+    "prefix": "para",
+    "body": [
+      "Para (${1:x} = ${2:0}; ${1:x} < ${3:max}, ${1:x}++)",  
+      "{",
+        "\t$4",
+      "}"
+    ],
+    "description": "laço de repetição 'para'"
   },
   
-  "senao": {
-  "prefix": "senao",
-  "body": [
-    "senao {",    
-    "\t$0",
-    "}"
-  ],
-  "description": "senao { }"
-  },
-  
-  "para inicio fim": {
-  "prefix": "parai",
-  "body": [
-    "para (${1:x} = ${2:0}; ${1:x} < ${3:max}, ${1:x}++)",
-    "Inicio",
-    "\t$0",
-    "Fim;"
-  ],
-  "description": "para inicio fim"
-  },
-  
-  "para (sem inicio e fim)": {
-  "prefix": "para",
-  "body": [
-    "para (${1:x} = ${2:0}; ${1:x} < ${3:max}, ${1:x}++) {",    
-    "\t$0",
-    "}"
-  ],
-  "description": "para (sem inicio e fim)"
-  },
-  
-  "definir funcao inicio fim": {
-  "prefix": "definir funcao inicio",
-  "body": [
-    "Definir Funcao ${1:MinhaFuncao} ();",
-    "Funcao ${1:MinhaFuncao} ();",
-    "Inicio",
-    "\t$0",
-    "Fim;"
-  ],
-  "description": "Definir funcao inicio fim"
-  },
-
   "definir funcao": {
     "prefix": "definir funcao",
     "body": [
       "Definir Funcao ${1:MinhaFuncao} ();",
-      "Funcao ${1:MinhaFuncao} (); {",      
-      "\t$0",
-      "Fim;"
-    ],
-    "description": "Definir funcao (sem inicio e fim)"
-  },  
-
-  "funcao inicio fim": {
-    "prefix": "funcao inicio",
-    "body": [      
-      "Funcao ${1:MinhaFuncao} (); {",      
-      "\t$0",
-      "Fim;"
-    ],
-    "description": "Definir funcao (sem inicio e fim)"
-  }, 
-
-  "funcao": {
-    "prefix": "funcao",
-    "body": [      
-      "Funcao ${1:MinhaFuncao} (); {",      
-      "\t$0",
+      "Funcao ${1:MinhaFuncao} ();",      
+      "{",
+        "\t$0",
       "}"
     ],
-    "description": "Definir funcao (sem inicio e fim)"
+    "description": "Definir funcao"
+  },   
+  
+  "se senao": {
+    "prefix": "se",
+    "body": [
+      "Se (${1:Condicao})",
+      "{",
+        "\t$2",
+      "}",
+      "Senao",
+      "{",
+        "\t$3",
+      "}"
+    ],
+    "description": "se / senao"
   },  
   
-  "se (sem inicio e fim)": {
-  "prefix": "se",
-  "body": [
-    "Se (${1:Condicao}) {",
-    "\t$0",
-    "}"
-  ],
-  "description": "se (sem inicio e fim)"
-  },
-  
-  "se inicio fim": {
-  "prefix": "se inicio fim",
-  "body": [
-    "se (${1:Condicao})",
-    "Inicio",
-    "\t$0",
-    "Fim;"
-  ],
-  "description": "se inicio fim"
-  },
-  
-  
-  "se senao (sem inicio e fim)": {
-  "prefix": "se senao",
-  "body": [
-    "Se (${1:Condicao}) {",
-    "\t${2:então}",
-    "}",
-    "Senao {",
-    "\t${3:senão}",
-    "}"
-  ],
-  "description": "se senao (sem inicio e fim)"
-  },
-  
-  "se senao inicio fim": {
-  "prefix": "se senao inicio fim",
-  "body": [
-    "Se (${1:Condicao})",
-    "Inicio",
-    "\t${2:então}",
-    "Fim",
-    "Senao",
-    "Inicio",
-    "\t${3:senão}",
-    "Fim;"
-  ],
-  "description": "se senao inicio fim"
+  "se": {
+    "prefix": "se",
+    "body": [
+      "Se (${1:Condicao})",
+      "{",
+        "\t$0",
+      "}"
+    ],
+    "description": "se"
   },
 
-  // SQL Avançado
   "SQL_Criar completo": {
-    "prefix": "SQL_Criar completo",
+    "prefix": "SQL_Criar",
     "body": [
       "SQL_Criar(${1:cBusCur});",
       "SQL_UsarSqlSenior2(${1:cBusCur}, 0);",
       "SQL_UsarAbrangencia(${1:cBusCur}, 0);",      
-      "SQL_DefinirComando(${1:cBusCur}, ${2:aSqlCur});",            
+      "SQL_DefinirComando(${1:cBusCur}, ${2:aSqlCur});",    
+      "SQL_DefinirInteiro(${1:cBusCur}, \"nNumero\", nNumero);",
+      "SQL_DefinirAlfa(${1:cBusCur}, \"aAlfa\", aAlfa);",
+      "SQL_DefinirData(${1:cBusCur}, \"dData\", dData);",
+      "SQL_DefinirFlutuante(${1:cBusCur}, \"nFlutuante\", nFlutuante);",
       "SQL_AbrirCursor(${1:cBusCur});",
-      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)",            
-      "\tSQL_Proximo(${1:cBusCur});",
+      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)", 
+      "{",  
+        "\t$0",     
+        "\tSQL_RetornarInteiro(${1:cBusCur}, \"nRetNumero\", nRetNumero);",
+        "\tSQL_RetornarAlfa(${1:cBusCur}, \"aRetAlfa\", aRetAlfa);",
+        "\tSQL_Proximo(${1:cBusCur});",
       "}",
       "SQL_FecharCursor(${1:cBusCur});",
       "SQL_Destruir(${1:cBusCur});"
@@ -195,22 +117,25 @@
     "description": "SQL_DefinirComando(Cursor, Comando SQL)"
   },
   "SQL_AbrirCursor se": {
-    "prefix": "SQL_AbrirCursor se",
+    "prefix": "SQL_AbrirCursor",
     "body": [
       "SQL_AbrirCursor(${1:cBusCur});",
-      "Se(SQL_EOF(${1:cBusCur}) = 0)",      
-      "\tSQL_Proximo(${1:cBusCur});",
+      "Se(SQL_EOF(${1:cBusCur}) = 0)", 
+      "{",   
+        "\t$0",
       "}",
       "SQL_FecharCursor(${1:cBusCur});"
     ],
     "description": "SQL_AbrirCursor(Cursor): Abre e fecha o cursor, colocando um 'se' no meio"
   },
   "SQL_AbrirCursor enquanto": {
-    "prefix": "SQL_AbrirCursor enquanto",
+    "prefix": "SQL_AbrirCursor",
     "body": [
       "SQL_AbrirCursor(${1:cBusCur});",
-      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)",      
-      "\tSQL_Proximo(${1:cBusCur});",
+      "Enquanto(SQL_EOF(${1:cBusCur}) = 0)",   
+      "{", 
+        "\t$0",  
+        "\tSQL_Proximo(${1:cBusCur});",
       "}",
       "SQL_FecharCursor(${1:cBusCur});"
     ],
@@ -223,29 +148,24 @@
     ],
     "description": "SQL_AbrirCursor(Cursor): Abre o cursor"
   },
-  "SQL_EOF": {
-    "prefix": "SQL_EOF",
-    "body": [
-      "SQL_EOF(${1:cBusCur})"  
-    ],
-    "description": "SQL_EOF(Cursor): Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
-  },
 
   "SQL_EOF se": {
-    "prefix": "SQL_EOF se",
+    "prefix": "Se (SQL_EOF",
     "body": [
-      "Se (SQL_EOF(${1:cBusCur}) = 0) {",
-      "\t$0",
+      "Se (SQL_EOF(${1:cBusCur}) = 0)",
+      "{",
+        "\t$0",
       "}"    
     ],
     "description": "SQL_EOF(Cursor) com se: Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
   },
   "SQL_EOF enquanto": {
-    "prefix": "SQL_EOF enquanto",
+    "prefix": "Enquanto (SQL_EOF",
     "body": [
-      "Enquanto (SQL_EOF(${1:cBusCur}) = 0) {",
-      "\t$0",
-      "\tSQL_Proximo(${1:cBusCur});",
+      "Enquanto (SQL_EOF(${1:cBusCur}) = 0)",
+      "{",
+        "\t$0",
+        "\tSQL_Proximo(${1:cBusCur});",
       "}"    
     ],
     "description": "SQL_EOF(Cursor) com enquanto: Verifica se chegou no fim. Retorna 0 se ainda houver registros, 1 se chegou ao fim."
@@ -298,5 +218,61 @@
       "SQL_Destruir(${1:cBusCur});"
     ],
     "description": "SQL_Destruir(Cursor): Destrói o cursor"
+  },
+  "ExecSQL insert": {
+    "prefix": "ExecSQL",
+    "body": [
+      "ExecSql \"INSERT INTO ${1:Tabela} (${2:Campos}) VALUES (:${3:Variaveis})\";"
+    ],
+    "description": "ExecSQL: inserir dados em tabela"
+  }, 
+  "ExecSQL update": {
+    "prefix": "ExecSQL",
+    "body": [
+      "ExecSql \"UPDATE ${1:Tabela} SET (${2:Campo}) = (:${3:Variavel}) WHERE ${4:Condicao}\";"
+    ],
+    "description": "ExecSQL: atualizar dados em tabela"
+  },
+  "ExecSQL delete": {
+    "prefix": "ExecSQL",
+    "body": [
+      "ExecSql \"DELETE ${1:Tabela} WHERE ${2:Condicao}\";"
+    ],
+    "description": "ExecSQL: deletar dados em tabela"
+  },
+  "ExecSQLEx insert": {
+    "prefix": "ExecSQLEx",
+    "body": [
+      "ExecSqlEx (\"INSERT INTO ${1:Tabela} (${2:Campos}) VALUES (:${3:Variaveis})\", nRetSql, aRetSql);"
+    ],
+    "description": "ExecSQL: inserir dados em tabela"
+  }, 
+  "ExecSQLEx update": {
+    "prefix": "ExecSQLEx",
+    "body": [
+      "ExecSqlEx (\"UPDATE ${1:Tabela} SET (${2:Campo}) = (:${3:Variavel}) WHERE ${4:Condicao}\", nRetSql, aRetSql);"
+    ],
+    "description": "ExecSQL: atualizar dados em tabela"
+  },
+  "ExecSQLEx delete": {
+    "prefix": "ExecSQLEx",
+    "body": [
+      "ExecSqlEx (\"DELETE ${1:Tabela} WHERE ${2:Condicao}\", nRetSql, aRetSql);"
+    ],
+    "description": "ExecSQL: deletar dados em tabela"
+  },
+  "GeraLog": {
+    "prefix": "GeraLog",
+    "body": [
+      "GeraLog(\"${1:Log}\");"
+    ],
+    "description": "GeraLog(\"Log\"): Gera uma mensagem de log"
+  },
+  "Mensagem de pergunta": {
+    "prefix": "Mensagem",
+    "body": [
+      "nRetMsg = Mensagem(\"${1:Deseja continuar?[&Sim,&Não]}\");"
+    ],
+    "description": "Mensagem(\"Mensagem\", \"Titulo\", \"Botao1\", \"Botao2\", \"Botao3\", BotaoPadrao, BotaoFoco, Retorno): Mensagem de pergunta"
   }
 }
