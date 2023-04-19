@@ -1,0 +1,258 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "lsp",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#texto"
+		},
+		{
+			"include": "#comentarios"
+		},
+		{
+			"include": "#numeros"
+		},
+		{
+			"include": "#operadores"
+		},
+		{
+			"include": "#constantes_erp"
+		},
+		{
+			"include": "#constantes_rh"
+		},
+		{
+			"include": "#variaveis_erp"
+		},
+		{
+			"include": "#variaveis_rh"
+		},		
+		{
+			"include": "#funcoes_erp"
+		},
+		{
+			"include": "#funcoes_rh"
+		}	
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.lsp",
+					"match": "(?<!\\.)(?i)\\b(inicio|fim|definir|para|enquanto|vapara|regra|se|senao|cancel|alfa|numero|tabela|funcao|continue|pare|end|e|ou|abrir|ler|fechar|gravar|lernl|formatar|inserir|mensagem|atualizarcampos|iniciartransacao|finalizartransacao|desfazertransacao|valret|valstr|abrircursor|fecharcursor|achou|naoachou|SQL|retorna|cursor|data|execsql|execsqlex)\\b"
+				},
+				{
+					"name": "keyword.control.lsp",
+					"match": "(?<!\\.)(?i)\\b(Lista|DefinirCampos|EfetivarCampos|AdicionarCampo|funcao|Adicionar|Inserir|Editar|Gravar|Cancelar|alterar|Excluir|para|Primeiro|Ultimo|Anterior|SetarChave|EditarChave|VaiParaChave|NumReg|SetaNumReg|IDA|FDA|QtdRegistros|Limpar)\\b"
+				},
+				{
+					"name": "keyword.control.lsp",
+					"match": "(?<!\\.)(?i)\\b(Abrir|Alfa|Atualizar|Cancel|Continue|Cursor|Data|Definir|DesfazerTransacao|E|End|Enquanto|ExecSQL|ExecSQLEx|Fechar|Fim|FinalizarTransacao|Formatar|Funcao|Gravar|Gravarnl|IniciarTransacao|Inicio|Inserir|Ler|Lernl|Mensagem|Numero|Ou|Para|Pare|Regra|Se|Senao|Tabela|ValRet|ValStr|VaPara)\\b"
+				},
+				{
+					"name": "keyword.control.lsp",
+					"match": "(?<!\\.)(?i)\\b(Abrir|Fechar|Gravar|GravarNL|GravarNLEOL|Ler|LerNL)\\b"
+				}
+			]
+		}, 		
+		"texto": {
+			"name": "string.quoted.double.lsp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.lsp",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comentarios": {
+			"patterns": [
+				{
+					"name": "comment.line.at.lsp",
+					"match": "@[^\n]*"
+				},
+				{
+					"name": "comment.block.lsp",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"numeros": {
+			"patterns": [
+				{
+					"name": "constant.numeric.lsp",
+					"match": "(?<!\\.)(?i)\\b\\d+\\b"
+				}
+			]
+		},
+		"operadores": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.lsp",
+      		"match": "(?<!\\.)(?i)\\b(\\+|-|\\*|/|=|\\+\\+|--)\\b"
+				},
+				{
+					"name": "keyword.operator.lsp",
+					"match": "(?<!\\.)(?i)\\b(e|ou)\\b"
+				},
+				{
+					"name": "keyword.operator.logical.lsp",
+					"match": "(?<!\\.)(?i)\\b(=|>|<|<>|>=|<=|e|ou)\\b"
+				}				
+			]
+		},
+		"variaveis_erp": {
+			"patterns": [
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(asdfasdf)\\b"
+				}
+			]
+		},
+		"variaveis_rh": {
+			"patterns": [
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(AnoDem|AnoHoj|AnoSis|AtuProSal|AvaMotEli|CauDem|CgiAddr|ClaAtu|ClaPro|ClaSalAnt|ClaSalEmp|CnvHor|CnvMin|CodLocEmp|CplMesAnt|CplNiv|CplNivBas|CplNivRea|CplPro|CplPsa|CplSalEmp|DatAltEtb|DatAltFil|DatAltLoc|DatAltNat|DatAltSal|DatDem|DatDma|DatEfePro|DatFim|DatIni|DatRel|DatSalAnt|DatSis|DesRodape|DesRodapePa|DiaDem|DiaHoj|DiaJus|DiaSis|EdiCad|EdiCr1|EdiCra|EdiLc1|EmpAltFil|EmpAtu|EmpPro|ErrImp|EspCodNiv|EspLevel|EspNomNiv|EspTotalLevel|EstAux|EstSalAnt|EstSalEmp|EstSalPro|EtbEmp|FilEmp|HieLc1|HieLoc|HorSem|HorSis|IntBasRea|IntEveDup|IntPerRef|LinWeb|LocEmp|MasLoc|MesAltAnt|MesDem|MesExt|MesHoj|MesSis|MesUltPro|MotAl1|MotAl2|MotAlt|MotSalAnt|MotSalEmp|MotSel|MsgFimTeste|NivAtu|NivPro|NivSalAnt|NivSalEmp|NomEmp|NomModRel|NomUsu|NumPag|ObsProCar|ObsProSal|PerAcertoQue|PerDesAnt|PerDesEmp|PerDesPro|PerFim|PerIni|PerReaAnt|PerReaAtu|PerRes|QtdResCerTes|QtdResIncTes|REAdmMes|REArrHor|REArrMen|REBasCpl|REBasSal|RECodMot|REDatAlt|REDatDem|REDemMes|REHisFut|RENormativo|RENovSal|REReaPro|REReaSal|ResAssTeste|RETipSin|RETipSis|REValSal|RetDes|SalAdm|SalAt1|SalAt2|SalEmp|SalHorEmp|SalMesAnt|SalMesEmp|SalNiv|SalPro|SalRes|SitAuxAnt|SitAuxAtu|SitEmp|SomNotPes|StrLot|TabOrgEmp|TemAva|TemNiv|TempoTeste|TemSer|TipCan|TipEntrevista|TipoAvaGer|TipoAvaReg|TipPro|TipOcuExt|TipOpePes|TipReg|TipSalAnt|TipSalEmp|TipSalPro|TipSitEmp|TpoSer|TpoSerDia|TroClaSal|TxtEma|UltCodLoc|UltSal|ValImp|VerWeb|vExecucaoRegra|Web_HTML|WNConector)\\b"
+				},
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(ClaAtu|DatAltEsc|DatDem|DatRef|DiaAdm|DiaDem|DiaHoj|EdiLc1|ErrImp|EspTotalLevel|EstAnt|EstSal|HorSem|MasLoc|MesAdm|MesDem|MesHoj|MotAl1|MotAl2|MotSel|NivAnt|NivAtu|NroMes|PerFim|PerIni|SalAdm|SalAnt|SalAt1|SalAt2|SalCpl|SalDiaEmp|SalHorEmp|SalMesEmp|SalMinEmp|SalNiv|Status|TurHor|UltSal)\\b"
+				},
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(AnoHoj|AnoSis|AtuProSal|AvaStrCcl|AvaStrDcp|CarPca|ClaAtu|ClaPro|ClaPsa|ClaSalAnt|ClaSalEmp|CnvHor|CnvMin|CodUsu|ConWebElemento|ConWebRetorno|CplMesAnt|CplNiv|CplNivBas|CplNivRea|CplPro|CplPsa|CplSalEmp|CplPro|DatAltNat|DatAltSal|DatDem|DatDma|DatEfePro|DatFim|DatHoj|DatIni|DatRel|DatSalAnt|DatSis|DesRodape|DesRodapePa|DiaHoj|DiaSis|EdiCad|EdiCar|EdiCr1|EdiCra|EdiLc1|EmpAtu|EmpPro|ErrImp|EspCodNiv|EspDesNiv|EspLevel|EspNomNiv|EspTotalLevel|EstAux|EstSalAnt|EstSalEmp|EstSalPro|HieLoc|HorSem|HorSis|IntBasRea|JSRegGPC|LocEmp|MasLoc|MesAltAnt|MesExt|MsgRegAvisoAvaliacao|MesHoj|MesSis|MesUltPro|MotAl1|MotAl2|MotAlt|MotSalAnt|MotSalEmp|MotSel|MsgRegGpc|MsgRegresultados|NivAtu|NivPro|NivPsa|NivSalAnt|NivSalEmp|NomEmp|NomModRel|NomUsu|NumPag|ObsProCar|ObsProSal|ORIREGGPC|ORIREGRESULTADOS|PerDesAnt|PerDesEmp|PerDesPro|PerFim|PerIni|PerReaAnt|PerReaAtu|PerRes|PerResPon|REAdmMes|REArrHor|REArrMen|REBasCpl|REBasSal|RECodMot|REDatAlt|REDatDem|REDemMes|REHisFut|RENormativo|RENovSal|REReaPro|REReaSal|ResultadoAva|RETipSin|RETipSis|REValSal|RetDes|SalAdm|SalAt1|SalAt2|SalEmp|SalHorEmp|SalMesAnt|SalMesEmp|SalNiv|SalPro|SalRes|SitPro|TabOrgEmp|TemAva)\\b"
+				},
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(PerDesPro|TipSalPro|SitPro|DatEfePro|MotSalEmp|EstSalPro|ClaPro|NivPro|SalPro|CplPro|ObsProCar|ObsProSal)\\b"
+				},
+				{
+					"name": "variable.other.lsp",
+					"match": "(?<!\\.)(?i)\\b(AnoSis|AnxEma|AssEma|CarEmp|CcPEma|CcuEmp|CgiAddr|ClaSalAnt|ClaSalEmp|CodCli|CodLocEmp|CodMotEli|CodPesExt|CodUsu|CplMesAnt|CplSalEmp|DatAdmEfeCan|DatAltCar|DatAltCcu|DatAltEsc|DatAltEtb|DatAltFil|DatAltLoc|DatAltSal|DatFim|DatIni|DatPerDemIni|DatPerDemFim|DatRef|DatRel|DatSalAnt|DatSis|DesRodape|DesRodapePa|DiaSis|DstEma|EdiCad|EdiCar|EdiCr1|EdiCra|EfeTiv|EmaRemPad|EmpAltFil|EmpAtu|EmpPro|EntSab|EscEmp|EspCodNiv|EspLevel|EspNomNiv|EspTotalLevel|EstCarEmp|EstSalAnt|EstSalEmp|EtbEmp|FilEmp|HieLc1|HieLoc|HorBasEmp|HorDsrEmp|HorEnt|HorSabEmp|HorSai|HorSemEmp|HorSis|IdiomaCurriculoWeb|InsColEfe|LinWeb|ListaRequisicoesAnuncio|LocEmp|MesExt|MesSis|MinInt|MotCarEmp|MotSalAnt|MotSalEmp|MsgCurriculoWeb|NatDesEmp|NivSalAnt|NivSalEmp|NomCli|NomEmp|NomModRel|NomUsu|NumPag|NumVia|OriOpeExa|OriRpp|PerDesAnt|PerDesEmp|PerfilCurriculoWeb|PerReaAnt|PerReaAtu|RmtEma|SaiSab|SalEmp|SalMesAnt|SiteAddr|SitEmp|StrLot|TabOrgEmp|TipCanCurriculoWeb|TipEntrevista|TipoAvaReg|TipSalAnt|TipSalEmp|TipSel|TpBotaoConcurso|TpoSer|TpoSerDia|TurEmp|TxtEma|UltCodLoc|VerWeb|vExecucaoRegra|Web_HTML|WNConector)\\b"
+				}
+			]
+		},
+		"constantes_erp": {
+			"patterns": [
+				{
+					"name": "constant.language.lsp",
+					"match": "(?<!\\.)(?i)\\b(gertabnum|gertabalf|datsis|diasis|messis|anosis|extsis|horsis|numpag|codemp|empresa|codfil|filial|nomusu|desrodape|gercodusu|codusu|ambweb|BloCodIn1|BloCodIn2|BloDesMe1|BloDesMe2|BloDesMe3|BloDesMe4|GerNomMod|ChqExtLn1|ChqExtLn2|ChqDiaDtP|ChqExtMes|ChqAno1Po|ChqAno2Po|FinBaiCli|FinCepCli|FinCheBan|FinCheCta|FinCheNum|FinCidCli|FinCodCli|FinCodCrt|FinCodFil|FinCodFpg|FinCodIb1|FinCodIb2|FinCodIn1|FinCodIn2|FinCodMoe|FinCodNtg|FinCodOcr|FinCodPor|FinCodTns|FinCodTpt|FinConBan|FinCplEnd|FinCrtBan|FinDatDsc|FinDatEmi|FinDatEnt|FinDatGer|FinDatMul|FinDatNeg|FinDatVct|FinDesIn1|FinDesIn2|FinDscDia|FinDscNeg|FinEmiFim|FinEmiIni|FinEndCli|FinEspTit|FinGerArq|FinJrsDia|FinJrsNeg|FinMulNeg|FinNomArq|FinNomArq|FinNomAva|FinNomCli|FinNosNum|FinNumArb|FinNumIns|FinNumNfv|FinNumTit|FinObs|FinObsBqt|FinObserv|FinOcrBan|FinOriIns|FinOriTit|FinOutNeg|FinPerJrs|FinPerMul|FinPortador|FinProSuc|FinQtdDia|FinQtdTRB|FinRecUnn|FinSelCli|FinSelDia|FinSelFil|FinSelFpg|FinSelIn1|FinSelIn2|FinSelJrs|FinSelMax|FinSelMin|FinSelMod|FinSelNfv|FinSelNtg|FinSelOpc|FinSelRep|FinSelTit|FinSelTns|FinSelTot|FinSelTpt|FinSigUfs|FinSitTit|FinTaxPer|FinTipIns|FinTipJrs|FinTipSel|FinTitBan|FinVenFim|FinVenIni|FinVlrAbt|FinVlrCor|FinVlrDsc|FinVlrIof|FinVlrMul|FinVlrOde|FinVlrTit|FinVlrTot|FinVlrTRB|NumViaNfs|empatu|MskCla|FinCplEnd|NFSSai|NFSEnt|AnoS2p|NfsObsPro|NfsObsSer|DupExtLn1|DupExtLn2|DupExtLn3|DupPraCli|DupPrPgCl|DupPerDdp|DupVlrDdp|DesIpvNfs|DesIsvNfs|NfsCodClf|NfsClaFis|NumPreImp|FinPECodFil|FinPENumTit|FinPECodTpt|FinPECodFor|FinPEDatEmi|FinPEDatEnt|FinPEVctPro|FinPETipPgt|FinPETotReg|FinPETotVlr|FinPECodTns|FinPECodFpg|FinPEVlrAbe|FinPEVlrMov|FinPEVlrJrs|FinPEVlrMul|FinPEVlrEnc|FinPEVlrCor|FinPEVlrOac|FinPEVlrDsc|FinPEVlrOde|FinPEVlrTot|FinPENomFor|FinPENumIns|FinPETipIns|FinPEEndFor|FinPECplFor|FinPEBaiFor|FinPECidFor|FinPESigUfs|FinPECepFor|FinPEObsTcp|FinPECodBan|FinPECodAge|FinPEPgtBan|FinPEGriFil|FinPEGriImp|FinPEGriApi|FinPEGriSeq|FinPETipImp|FinPETipGui|FinPETriBan|FinPeDatPgt|CodPar|VctPar|VlrPar|PerDDp|QtdDDD|CodPor|CodCrt|PatNumBem|PatSerBem|PatNumPla|PatCodBar|PatCodLoc|IpvQtdFat|IpvQtdDev|IpvPreUni|IpvPerDsc|IpvVlrBru|IpvVlrDsc|IpvVlrLiq|IpvVlrIpi|IpvVlrIcm|IsvQtdFat|IsvQtdDev|IsvPreUni|IsvPerDsc|IsvVlrBru|IsvVlrDsc|IsvVlrLiq|TpvDiaPar|TpvVlrPar|TpvQtdPar|TpvLisUFs|TpvVenDsc|MskCgc|MskCpf)\\b"
+				}
+			]
+		},
+		"constantes_rh": {
+			"patterns": [
+				{
+					"name": "constant.language.lsp",
+					"match": "(?<!\\.)(?i)\\b(numpag|empatu|NomEmp|HorSis|DatSis|TipSal|NomUsu|EmpPro|DatIni|DatFim)\\b"
+				}
+			]
+		},
+		"funcoes_erp": {
+			"patterns": [
+				{
+					"name": "entity.name.method.lsp",
+					"match": "(?<!\\.)(?i)\\b(NumRegraEvento|EventoAntesDeInserir|EventoAposInserir|EventoAntesDeAlterar|EventoAposAlterar|EventoAntesDeExcluir|EventoAposExcluir|EventoAoAbrirATela|EventoAoSairDaTela|Formulario|AbaAtiva|DescAbaAtiva)\\b"
+				},
+				{
+					"name": "invalid.deprecated.lsp",
+					"match": "(?<!\\.)(?i)\\b(LeMemListCcuFluCaixaCcu|LeMemListFluCaixaCcu|VerificaAbaAtiva|IsWFInitialized|SendWFResponse)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(AbrirTelaSistema|AdicionaComponenteModelo|AdicionaConsumoComponente|AdicionaEstagioRoteiro|AdicionaOperacaoRoteiro|AdicionaOperacaoManualRoteiro|AdicionaRateioRegra|AgluCtbContaPertence|AgluCtbContas|AgluCtbCriar|AgluCtbValorAglu|AgluCtbValorComp|AlfaParaInt|AlteraCampoEncontroPag|AlteraCampoEncontroRec|AlteraCampoRetorno|AlteraCampoRetornoPE|AlteraCampoSubst|AlteraFormaRateioTransacao|AlterarVidaUtilBem|AlteraSitMccTesouraria|AlteraSitObsPed|AlteraTituloCP|ApontarOPs|ArqExiste|Arredonda|ArredondarValor|AtualizaBarraProgresso|AtualizaEmbalagensNF|AtualizarPesosPFA|AtualizaSaldoContabil|AtualizaSaldoContabilAbr|AtualizarSituacao_PFA_PES|BaixarComponentes|BuscaCamposChaveTabela|BuscarAbrEntUsuario|BuscaBaixaDepreciacao|BuscaDadosInvGerAntVer|BuscaDepreciacaoAcumulada|BuscaFaixasCep|BuscaFilialTituloCP|BuscaFiltroRateioFin|BuscaLinhaTexto|BuscaMascModPlano|BuscaMascModPlano15n|BuscaMenorMaiorVctBaiBcd|BuscaSaldoAntCCusto|BuscaSaldoAnterior|BuscaSaldoAnteriorAbr|BuscaSaldoAnteriorAbrAux|BuscaSaldoAnteriorHis|BuscaSaldoProjeto|BuscaVlrCccProduto|CabFluCaixaCcu|CalculaAlfa|CalculaIndiceCiap|CalculaQtdMinutos|CalculaQtdMinutos_HoraIniFim|CaminhoMenu|CancelarOP|CancelarProducao|CancelaSaldoOrdemCompra|CancelaSaldoRequisicoes|CaracterParaAlfa|CarregaFaixasCep|CarregarImagemFundoSistema|CarregaParametrosMovimento|CarregaImagemControle|CarregarTextoArq|CarregaSaldoContabil|CarregaSaldoContabilAbr|CarregaSaldoContabilAux|CarregaSaldoContabilHis|CarregaSaldoContabilZer|CarregaSaldoPorMes|CarregaSaldoPorMesAnt|CarregaSaldoAnteriorProjeto|CarregaSaldoProjeto|CNPJValido|ComposicaoProduto|ComposicaoProduto_2|ComposicaoProduto_3|Concatena|ConvDataInt|ConverteDataBanco|ConverteDataSqlSenior2|ConverteDataToDB|ConverteMascara|ConverteMaskContab|ConverteParaMaiusculo|ConverteParaMinusculo|CopiarAlfa|CopiarStr|CPFValido|CriaNovaDerivacao|CriaNovoProduto|CriaNovoModelo|CriaNovoRoteiro|CriaNovoServico|CriarEstoque|DataExtenso|DecimalParaAlfa|DeixaNumeros|DeletarAlfa|DeletarStr|DesItemLista|DesMontaData|DocumentoOrigem|DuplicarProdutoServicoEmpresa|EntradaValor|EnviarEmail|EnviarEmailEX|EscondeCampoTelaEntrada|EstaNulo|ExcluiBaixaCR|ExcluirComponenteOP|ExecProg|ExecutaFormularioSGI|ExecutaRelatorio|ExecutarRotinaSistema|Extenso|ExtensoMes|ExtensoMoeda|ExtensoSemana|FecharNFEletronica|ForcarFimEstagioOperacao|Raiz|FinalizaBarraProgresso|GeraConferenciaPatrimonio|GeraMovimentoNFSaida|GeraTabFicha2|GeraLog|GeraMovimento|GeraNumeracaoSerie|GeraObsBloPed|GerarOP|GeraRatOrcCtb|GerarItensEmbalagemPFA|GerarSeqEmbalagemPFA|GerarVidUtilInicial|GravaMemListCcc|GravaNumFcc|GravaRatOrcCtb|GravaTabela|GravaUltimoNum|GravarPedidoGrade|ImportacaoMoeda|ImportacaoCotacoesMoeda|ImprimeNotasFiscaisSaida|IncluirComponenteOP|IncluirOperacaoOP|IncluirServicoOP|IniciaBarraProgresso|InsereCep|InsereItensComposicaoProduto|InsereItensNFSaldoEstoque|InsereParcelaPedido|InsereRateioCrp|InserirAlfa|InserirStr|InsertMovimento|IntParaStr|IntParaAlfa|LeDadosComponentesMinuta|LeDadosProdutoMinuta|LeGridBaixasBcd|LeObsASGerada|LeObsOSBaixada|LeMemListCcc|LeMemListProOP|LeSeqOrdemServico|LeMemListAnaEmbFil|LeMemListCompPro|LeMemListCompPro_2|LeMemListCompPro_3|LerBalanca|LerBalancaTipoPeso|LerPosicaoAlfa|LerPosicaoStr|LiberaFaixasCep|LiberaSaldoContabil|LiberaSaldoProjeto|LimpaEspacos|LimpaEspacosDireita|LimpaEspacosEsquerda|LimpaGerTabAlf|LimpaGerTabNum|LimpaRatOrcCtb|LoteLctoAdicionaAuxiliar|LoteLctoAdicionaAuxiliarRet|LoteLctoAdicionaLcto|LoteLctoAdicionaLctoDoc|LoteLctoAdicionaLctoObs|LoteLctoAdicionaLctoRet|LoteLctoAdicionaRateio|LoteLctoAdicionaRateioFin|LoteLctoAdicionaRateioRet|LoteLctoCria|LoteLctoGeraLote|LoteLctoGeraLoteRet|LoteLctoImportacaoSapiens|LoteLctoInicializa|LoteLctoInicializaCon|LoteLctoInicializaDes|LoteLctoLibera|MMBuscaCotacaoMoeda|MMCalculaJurosMora|MMCria|MMLibera|MontaAbrangencia|MontaData|MontaEstruturaProdutoOP|MontaHistoricoPadrao|MontaNumLancamento|MontaSaldoAntCliEmpFil|MontaSaldoAntClienteGrupo|MontaSaldoAntCliTipoTitulo|MontaSaldoAntConta|MontaSaldoAntData|MontaSaldoAnteriorCliente|MontaSaldoAnteriorFornecedor|MontaSaldoAntExtrato|MontaSaldoAntForEmpFil|MontaSaldoAntFornecedorGrupo|MontaSaldoAntForTipoTitulo|MontaListEmbEst|MultiplicaValor|NomeCompletoUsuario|PegarTipoVar|PegarValorVarAlf|PegarValorVarNum|PegaUltimoNum|PosicaoAlfa|PosicaoStr|ProcuraEnter|QuebraTexto|RateioIntegracao|RateioIntegracaoFin|RecalcularOCServico|RemeterRetornarServico|RestoDivisao|RetDiaUtilAntPos|RetiraAcentuacao|RetiraCaracteresEspeciais|RetornaAscII|RetornaValorCFG|RetornarServicoOP|RealPrevFluCaixaCcu|Saldo|SaldoAnteriorCliente|SaldoAnteriorFornecedor|SelecionaDadosDIPI|SaldoCompleto|SelecaoTabelas|SapiensSID|SetaAlfaTelaEntrada|SetaNumeroTelaEntrada|SetarFiltroSql|SetarValorVarAlf|SetarValorVarNum|SimulacaoIMP_Calcular|SimulacaoIMP_Finalizar|SimulacaoIMP_Iniciar|StrParaInt|SaldoMes|SaldoProjeto|SubstAlfa|SubstAlfaUmaVez|TamanhoAlfa|TamanhoStr|TotalContasCentroCusto|TotalRateado|TrocaEmpresaFilial|TrocaPortadorCarteira|TrocarOpcaoOperacaoOP|TruncarValor|UltimoDia|UltimoRegistro|VerificaDiaUtil|VerificaMovimentoConta|VerificaNumero|VerificaValor|AgrupaComponentes|AtualizaConsultaPermissoes|AtualizaConsultaPermissoes|BuscaClienteBCD|BuscaComponente|BuscaConvIcms96|BuscaDadosInversaoGerencial|BuscaDadosInvGerencialMensal|BuscaDadosInvGerencialOrc|BuscaDadosInvGerOrcMensal|BuscaDadosOrcadoRealizado|BuscaOpr_OP_Roteiro|BuscaSaldoAntCCusto|Busca_Tempo_Fabricacao|Busca_Tempo_Fabricacao_Qtde|BuscarColunasVisao|CalculaDescontoTituloCP|CalculaDescontoTituloCR|CalculaJurosMora|CalculaJurosTituloCP|CalculaJurosTituloCR|CalculaMultaTituloCP|CalculaMultaTituloCR|CalculaTempoPrevisto|CarregaConvIcms96|CarregaEAN128ImgAjustavel|CarregaEAN128ParaImagem|GeraListaDVV|CarregaRoteiros|CarregaSaldoContabilICP|CarregaSaldoDeposito|CarregaSaldoFechamento|CarregaRazaoPF|CarregaRazaoPFCCu|CarregaSaldoPorMesHis|ComposicaoCombinacao|ComposicaoProduto|CriaEstNivel|CriaMovtacao|DadosCabecalhoVisaoNov|DadosContaVisaoNov|DataInicialFinal|DescricaoEstruturaModelo|DesmontaProduto|EnviarEmail|GeraHCCustos|GeraTabFicha|LeComposicaoDVV|LeConvIcms96|LeEstNivel1|LeEstNivel2|LeListaDVV|LeListaItmCalExp|LeListaOpr|LeListaSimulaCargaRecursos|LeListaSimulaComponentes|LeMemListaAPC|LeMemlistAna|LeMemListAnaVar|LeMemListAVM|LeMemListaProdutoFinal|LeMemListaProdutoFinal_Qtd|LeMemListBaiRecBCre|LeMemListBaiRecChe|LeMemListBaiRecCom|LeMemListBaiRecCon|LeMemListBaiRecGCre|LeMemListBaiRecTit|LeMemListCcp|LeMemListComOrcRea|LeMemListComOrcReaChave|LeMemListCompPro|LeMemListCompPro_2|LeMemlistCrc|LeMemListCrd|LeMemListDIPIClaFis|LeMemListDIPIForCli|LeMemListEti|LeMemListExtCli|LeMemListExtCli2|LeMemListExtFor|LeMemListFrqAgt|LeMemListFrqCompra|LeMemListHCCustos|LeMemListImpEpp|LeMemListMovPag|LeMemListMovRec|LeMemListMovimentosMensais|LeMemListMovMensaisMoeda|LeMemListNfeOcp|LeMemListNfeOcp1|LeMemListOcpPed|LeMemlistPdv|LeMemListPosCli|LeMemListPosEst|LeMemListPosFor|LeMemListPosPorAnal|LeMemListPosPorSint|LeMemListProEst|LeMemListaPpm|LeMemListSaldosMensais|LeMemListSaldosMensais2|LeMemListSaldosMensaisMoeda|LeMemlistResCpa|LeMemListRetBan|LeMemListRetBanChe|LeMemListRetBanCheSemErr|LeMemListRetBanPE|LeMemListRetBanSemErr|LeMemListTCcp|LeMemListTRegCdp|LeSaldoDeposito|LeSaldoFechamento|LeSaldoFechamento_2|LeSeriesDistribuidas|LiberaConvIcms96|LiberaPF|LiberaPFCCu|LimpaFichasRel|LimpaTabFicha|LinhaFinalRel|MMBaixaCalculaJrsMulAntCR|MMBaixaCalculaReajusteCR|MMBuscaDados|MMCalculaDescontoTituloCP|MMCalculaDescontoTituloCR|MMCalculaJurosTituloCR|MMCalculaJurosTituloCP|MMCalculaReajusteCR|MMExecuta|MMParametrosCarga|MontaBMDCheque|MontaComposicaoDVV|MontaListEmbEst|MontaListOrcRea|MontaListPosEst|MontaListPosEst1|Multiplo|Potencia|ProprPermiteCaminho|ProximaContaVisao|ReajusteLisPre|RetornaLancamentoLista|RetornaItem|RetornaLigacao|RetornaProdutoFinal|RetornaSaldo|SaldoMesAcum|SaldoPF|SaldoPFCCu|SelecaoLctCP|SelecionaDadosDIPI|SelecionaImpressora|SimulaCargaRecursos|SimulaComponentes|SimulaComponentes_2|SimulacaoIMP_Iniciar|SimulacaoIMP_Calcular|SimulacaoIMP_Finalizar|SQLExecutar|SQLValorUnico|SQLProximo|SQLFim|SQLRetornaValor|SQLFechar|SQLQtdCampos|SQLComando|TelaOrigemRelatorio|Verifica_Movimento|PegaCodigoPolitica|SegEntAdicGrp|SegEntAdministrador|SegEntCodigo|SegEntDatCri|SegEntDesc|SegEntEhGrupo|SegEntEhMembro|SegEntEhUsuario|SegEntGrava|SegEntGrp|SegEntLe|SegEntLePorNome|SegEntLeCodigo|SegEntExistePorCodigo|SegEntExistePorNome|SegEntNome|SegEntPermAdmModulos|SegEntPermAdmRotinas|SegEntPermField|SegEntPermGeradores|SegEntPermModulo|SegEntPermRotina|SegEntPermTable|SegEntPermTela|SegEntQtdGrp|SegEntRemvGrp|SegEntSetaDesc|SegEntSetaNome|SegEntSetaPermAdmModulos|SegEntSetaPermAdmRotinas|SegEntSetaPermField|SegEntSetaPermGeradores|SegEntSetaPermModulo|SegEntSetaPermRotina|SegEntSetaPermTable|SegEntSetaPermTela|SegGrpAdicMem|SegGrpCria|SegGrpEhMembro|SegGrpMem|SegGrpQtdMem|SegGrpRemvMem|SegUsuAtivado|SegUsuCorrenteTemAcesso|SegUsuCria|SegUsuDatBlo|SegUsuDatExp|SegUsuDesbloqueia|SegUsuExigeAltSenha|SegUsuGrpAcs|SegUsuGrpAcsIndice|SegQtdUsuGrpAcs|SegUsuNomeComp|SegUsuPolBloqueio|SegUsuPolDurSenha|SegUsuPolEsqSenha|SegUsuPolFrmSenha|SegUsuPolHisSenha|SegUsuEmail|SegusuSetaAtivado|SegUsuSetaDatExp|SegUsuSetaExigeAltSenha|SegUsuSetaGrpAcs|SegUsuSetaNomeComp|SegUsuSetaPolBloqueio|SegUsuSetaPolDurSenha|SegUsuSetaPolEsqSenh|SegUsuSetaPolFrmSenha|SegUsuSetaPolHisSenha|SegUsuSetaSenha|SegUsuUltLogon|SegUsuSetaEmail|SegUsuSetaNaoExp|Prop_ModuloAtivo|Prop_ModuloWeb|Prop_ObterCodigoCliente|Prop_ObterNomeCliente|Prop_ObterQtdModulos|Prop_ObterNomeModulo|Prop_ObterQtdLicencasModulo|Prop_ObterQtdUsuariosSistema|Prop_ObterQtdInstanciasModWeb|Prop_ObterDataValidadeModulo|Prop_ObterDataValidade|HttpObjeto|HttpGet|HttpPost|HttpDownload|HttpLeMostrarProgresso|HttpAlteraMostrarProgresso|HttpLeConfiguracaoSSL|HttpAlteraConfiguracaoSSL|HttpLeConfiguracaoProxy|HttpAlteraConfiguracaoProxy|HttpLeAutenticacaoProxy|HttpAlteraAutenticacaoProxy|HttpLeContadorExcecoesProxy|HttpLimpaExcecoesProxy|HttpLeExcecaoProxy|HttpAdicionaExcecaoProxy|HttpExcluiExcecaoProxy|GravaLogFuncoes|TrocaCadastro|SQL_Criar|SQL_UsarSqlSenior2|SQL_UsarAbrangencia|SQL_DefinirComando|SQL_DefinirInteiro|SQL_DefinirFlutuante|SQL_DefinirAlfa|SQL_DefinirData|SQL_AbrirCursor|SQL_EOF|SQL_RetornarInteiro|SQL_RetornarFlutuante|SQL_RetornarAlfa|SQL_RetornarData|SQL_Proximo|SQL_FecharCursor|SQL_Destruir)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(AbrirTelaSistema|AdicionaComponenteModelo|AdicionaConsumoComponente|AdicionaEstagioRoteiro|AdicionaOperacaoManualRoteiro|AdicionaOperacaoRoteiro|AdicionaRateioRegra|AgluCtbContaPertence|AgluCtbLibera|AgluCtbCarregar|AgluCtbContas|AgluCtbCriar|AgluCtbValorAglu|AgluCtbValorComp|AlfaParaDecimal|AlfaParaInt|AlteraCampoEncontroPag|AlteraCampoEncontroRec|AlteraCampoRetorno|AlteraCampoRetornoPE|AlteraCampoSubst|AlteraFormaRateioTransacao|AlterarVidaUtilBem|AlteraSitMccTesouraria|AlteraSitObsPed|AlteraTituloCP|AnalisaBloqueioAreaPedido|AnoBissexto|ApontarOPs|ArqExiste|Arredonda|Arredonda|ArredondarValor|ArredondaValorTipoAcerto|AtualizaEmbalagensNF|AtualizarPesosPFA|AtualizarSituacao_PFA_PES|AtualizaSaldoContabil|AtualizaSaldoContabilAbr|BaixarComponentes|BuscaBaixaDepreciacao|BuscaBaixaDepreciacaoTipo|BuscaCamposChaveTabela|BuscaDadosInvGerAntVer|BuscaDepreciacaoAcumulada|BuscaFilialTituloCP|BuscaFiltroRateioFin|BuscaLinhaTexto|BuscaMascModPlano|BuscaMascModPlano15n|BuscaMenorMaiorVctBaiBcd|BuscarAbrEntUsuario|BuscarSaldoContabil|BuscaSaldoAntCCusto|BuscaSaldoAnterior|BuscaSaldoAnteriorAbr|BuscaSaldoAnteriorAbrAux|BuscaSaldoAnteriorHis|BuscaSaldoProjeto|BuscaTabPreco|BuscaVlrCccProduto|CadastrarInfAdicionaisICMS|CalculaAlfa|CalculaIndiceCIAP|CalculaPrecoProRata|CalculaQtdMinutos|CalcularValoresCP|CalcularValoresCR|CaminhoMenu|CancelarOP|CancelarProducao|CancelaSaldoOrdemCompra|CaracterParaAlfa|CarregaImagemControle|CarregaParametrosMovimento|CarregarImagemFundoSistema|CarregarCSVparaPlataforma|CarregarSaldoContabil|CarregarTextoArq|CarregaSaldoAnteriorProjeto|CarregaSaldoContabil|CarregaSaldoContabilAbr|CarregaSaldoContabilAux|CarregaSaldoContabilHis|CarregaSaldoContabilZer|CarregaSaldoPorMes|CarregaSaldoPorMesAnt|CarregaSaldoProjeto|CNPJValido|ComposicaoProduto|ComposicaoProduto_2|ComposicaoProduto_3|ComposicaoProduto_4|Concatena|ConciliarSaldoCcu|ConsiderarItemContrato|ConsistirLctoAContabilizar|ConvDataInt|ConverteUnidadeMedida|ConverteDataBanco|ConverteDataSqlSenior2|ConverteDataToDB|ConverteMascara|ConverteMaskContab|ConverteParaMaiusculo|ConverteParaMinusculo|CopiarAlfa|CopiarStr|CPFValido|CriaNovaDerivacao|CorrigeSaldoporFilial|CorrigeSaldoporDeposito|CriaNovoModelo|CriaNovoProduto|CriaNovoRoteiro|CriaNovoServico|CriarEstoque|CriarEstruturaSaldoCcu|DataExtenso|DefinirCategoriaPedidoWms|DeixaNumeros|DeletarAlfa|DeletarStr|DesItemLista|DesMontaData|DisponibilizarPF_Faturar|DocumentoOrigem|DuplicarFilial|Duplicar|EntradaValor|EnviarEmail|EnviarEmailEX|EscondeCampoTelaEntrada|EstaNulo|EstornaComponenteOP|ExcluiBaixaCR|ExcluirComponenteOP|ExcluiSeqModelo|ExecProg|ExecutaFormularioSGI|ExecutaRegraRecursiva|ExecutaRelatorio|ExecutaRelatorioArquivo|ExecutarRotinaSistema|ExcluirCalculoPISCOFINS|ExisteCPA501BAIFE01|ExportarSpedFiscal_EFD|ExportarLFPD_AtoCotepe7005|ExportarSEFPE_AtoCotepe3505|ExportarDIC_Sergipe|Extenso|ExtensoMes|ExtensoMoeda|ExtensoSemana|FechaNFEletronica|FinalizarGravacaoDadosEntrada|ForcarFimEstagioOperacao|fun_CancelaSaldoRequisicoes|GerarEntregaVarejo|GeraLog|GerarMDFeSaidaAutomatico|GeraMovimento|GeraMovimentoNFSaida|GeraNumeracaoSerie|GeraObsBloPed|GeraObsNf|GeraObsPed|GeraObsPfa|GerarOrdemRecebimentoWmsSenior|GerarOrdemSeparacaoWms|GerarOrdemSeparacaoWmsSenior|GeraRatOrcCtb|GerarItensEmbalagemPFA|GerarOP|GerarPendenciaExportacao|GerarPendenciaExportacaoRet|GerarSeqEmbalagemPFA|GerarSubprodutosOPModelo|GerarVidUtilInicial|GeraTabFicha2|GeraTabFicha3|GravacaoCampoEntrada|GravaMemListCcc|GravaNumFcc|GravaRatOrcCtb|GravarPedidoGrade|GravaUltimoNum|ImportacaoCotacoesMoeda|ImportacaoMoeda|ImprimeNotasFiscaisSaida|IncluirArquivoGED|IncluirComponenteOP|IncluirOperacaoOP|IncluirServicoOP|IncrementarCodigoAlfa|IniciarGravacaoDadosEntrada|InscricaoEstadualValida|InsereCep|InsereItensComposicaoProduto|InsereItensNFSaldoEstoque|InsereParcelaPedido|InsereRateioCrp|InserirAlfa|InserirStr|IntParaAlfa|IntParaStr|LeDadosComponentesMinuta|LeDadosProdutoMinuta|LeGridBaixasBcd|LeLotesSubdivididos|LeMemListAnaEmbFil|LeMemListCcc|LeMemListCompPro|LeMemListCompPro_3|LeMemListProOP|LeMenListCompPro_2|LeTransferenciaProduto|LerBalanca|LerBalancaTipoPeso|LerPedidosCanSub|LerPosicaoAlfa|LerPosicaoStr|LiberarSaldoContabil|LiberaSaldoContabil|LiberaSaldoProjeto|LimpaEspacos|LimpaEspacosDireita|LimpaEspacosEsquerda|LimpaGerTabAlf|LimpaGerTabNum|LimpaRatOrcCtb|LimparEstruturaSaldoCcu|ListaRegraAddProcurarAlfa|ListaRegraAddProcurarData|ListaRegraAddProcurarNumero|ListaRegraAddValorLinhaAlfa|ListaRegraAddValorLinhaData|ListaRegraAddValorLinhaNumero|ListaRegraAlterarLinhaAlfa|ListaRegraAlterarLinhaData|ListaRegraAlterarLinhaNumero|ListaRegraAnterior|ListaRegraCarregarJson|ListaRegraCriarLista|ListaRegraEmInclusao|ListaRegraExcluirLinha|ListaRegraFim|ListaRegraInicializarProcurar|ListaRegraInicio|ListaRegraIrPara|ListaRegraLiberarLista|ListaRegraNovaLinha|ListaRegraObterValorAlfa|ListaRegraObterValorData|ListaRegraObterValorNumero|ListaRegraPodeAlterar|ListaRegraPodeExcluir|ListaRegraPodeIncluir|ListaRegraPosicaoAtual|ListaRegraPrimeiro|ListaRegraProcurarAlfa|ListaRegraProcurarAnterior|ListaRegraProcurarData|ListaRegraProcurarNumero|ListaRegraProcurarProximo|ListaRegraProcurarRegistro|ListaRegraProximo|ListaRegraSalvarLinha|ListaRegraSalvarLista|ListaRegraTotalLinhas|ListaRegraUltimo|LoteLctoAdicionaAuxiliar|LoteLctoAdicionaAuxiliarRet|LoteLctoAdicionaLcto|LoteLctoAdicionaLctoDoc|LoteLctoAdicionaLctoObs|LoteLctoAdicionaLctoRet|LoteLctoAdicionaRateio|LoteLctoAdicionaRateioFin|LoteLctoAdicionaRateioRet|LoteLctoCria|LoteLctoGeraLote|LoteLctoGeraLoteRet|LoteLctoImportacaoSapiens|LoteLctoInicializa|LoteLctoInicializaCon|LoteLctoInicializaDes|LoteLctoLibera|MMBuscaCotacaoMoeda|MMCria|MMCalcularCorrecaoMonetaria|MMCalculaMultaTituloCP|MMCalculaMultaTituloCR|MMLibera|MontaAbrangencia|MontarAutenticacaoSeniorXd|MontaData|MontaEstruturaProdutoOP|MontaFaturamento|MontaHistoricoPadrao|MontaListaLostesSugeridos|MontaListEmbEst|MontaNumLancamento|MontaSaldoAntCliEmpFil|MontaSaldoAntClienteGrupo|MontaSaldoAntCliTipoTitulo|MontaSaldoAntConta|MontaSaldoAntData|MontaSaldoAnteriorCliente|MontaSaldoAnteriorFornecedor|MontaSaldoAntExtrato|MontaSaldoAntForEmpFil|MontaSaldoAntFornecedorGrupo|MontaSaldoAntForTipoTitulo|MultiplicaValor|NomeCompletoUsuario|ObterSequenciaPendenciaCarga|ObterProximoId|OrcamentoCtaCtbAtualizarCtaPai|OrcamentoCtaCtbIniciarMemoria|OrcamentoCtaCtbLiberarMemoria|OrcamentoCtaCtbPreencherMemoria|OtimizarAbrangencia|ObterValorNumericoPadraoCNAB|ObterValorAlfaPadraoCNAB|ObterValorDecimalPadraoCNAB|ObterValorDataPadraoCNAB|PegarTipoVar|PegarValorVarAlf|PegarValorVarNum|PegaUltimoNum|PosicaoAlfa|PosicaoStr|ProcuraEnter|QuebraTexto|RateioIntegracao|RateioIntegracaoFin|RecalcularOCServico|RemeterRetornarServico|RestoDivisao|RetDiaSemana|RetDiaUtilAntPos|RetiraAcentuacao|RetiraCaracteresEspeciais|RetornaAscII|RetornarDiasUteisMes|RetornarDiasUteisPeriodo|RetornarDigitoVerificadorVolume|RetornaPagamentoNotaFiscal|RetornarQtdDiasAno|RetornarSaldoCcu|RetornarServicoOP|RetornarSerieNotaFiscal|RetornaValorPreviaCSLL|Saldo|SaldoAnteriorCliente|SaldoAnteriorFornecedor|SaldoCompleto|SaldoContabilCompleto|SaldoMes|SaldoProjeto|SapiensSID|SapiensSIDEx|SelecaoTabelas|SelecionaDadosDIPI|SetaAlfaTelaEntrada|SetaNumeroTelaEntrada|SetaParamBuscaTabPreco|SetarFiltroSql|SetarValorVarAlf|SetarValorVarNum|SimulacaoIMP_Calcular|SimulacaoIMP_CR_Calcular|SimulacaoIMP_CalcularParcial|SimulacaoIMP_CR_CalcularParcial|SimulacaoIMP_Finalizar|SimulacaoIMP_Iniciar|SomarMesesDataRef|StrParaInt|SubstAlfa|SubstAlfaUmaVez|SugerirLoteCriterio|SugerirLoteUnico|TamanhoAlfa|TamanhoStr|TelaOrigemRelatorio|TotalContasCentroCusto|TotalRateado|TrocaEmpresaFilial|TrocaPortadorCarteira|TrocarOpcaoOperacaoOP|TruncarDecimal|TruncarValor|UltimoDia|UltimoRegistro|ValorElementoJson|VerificaDiaUtil|VerificaMovimentoConta|VerificaNumero|VerificaValor|VisaoContabil_Linha_Rotulo|VisaoContabil_Nivel_Conta)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(VerificaAbaAtiva|FormatarN)\\b"
+				}
+			]
+		},
+		"funcoes_rh": {
+			"patterns": [
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(IntParaAlfa2|InserirValoresSGI2|AbrirTelaSistema2)\\b"
+				}
+			]
+		},
+		"funcoes_lsp": {
+			"patterns": [
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(AbrirTelaSGI|AbrirTelaSGICarregandoChave|AtribuirFocoComponenteSGI|AtualizarTabela|CompilaFormulario|FecharFormularioSGI|InserirValoresSGI|LimparValorCampoSGI)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(AdicionaDadosGrade|AlteraControle|AlteraValorFormula|CancelarRelatorio|CarregaImagemControle|CarregaImgControle|CarregaImgVetorialControle|CodigoEspNivel|ConfiguraPontoGrafico|CriaView|DataInicialFinal|DateToDB|DeleteFieldSQL|DesCamLista|DetPrimConector|InsClauSQLCampoDireto|InsClauSQLField|InsClauSQLFrom|InsClauSQLGroupBy|InsClauSQLOrderBy|InsClauSQLWhere|InsEspAlinhDireita|InsSQLWhereSimples|LimpaDadosGrade|LimpaDadosGrafico|ListaSecao|MontarSQLHisCampo|MontarSQLHisCampoSeq|MontarSQLHistorico|MontarSQLHistoricoSeq|OrdenacaoSelecionada|PreenchePagina|ProximaPagina|RetornaCampoAlfaTabela|RetornaCampoNumeroTabela|SaltarPagina|SelecionaImpressora|SubstituiFrom|TruncaDadosGrade|UltimoRegistro)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(PegaCodigoPolitica|SegEntAdicGrp|SegEntAdministrador|SegEntCodigo|SegEntDatCri|SegEntDesc|SegEntEhGrupo|SegEntEhMembro|SegEntEhUsuario|SegEntExistePorCodigo|SegEntExistePorNome|SegEntGrava|SegEntGrp|SegEntLe|SegEntLeCodigo|SegEntLePorNome|SegEntNome|SegEntPermAdmModulos|SegEntPermAdmRotinas|SegEntPermField|SegEntPermGeradores|SegEntPermModulo|SegEntPermRotina|SegEntPermTable|SegEntPermTela|SegEntQtdGrp|SegEntRemovePermTela|SegEntRemvGrp|SegEntSetaDesc|SegEntSetaNome|SegEntSetaPermAdmModulos|SegEntSetaPermAdmRotinas|SegEntSetaPermField|SegEntSetaPermGeradores|SegEntSetaPermModulo|SegEntSetaPermRotina|SegEntSetaPermTable|SegEntSetaPermTela|SegGrpAdicMem|SegGrpCria|SegGrpEhMembro|SegGrpMem|SegGrpQtdMem|SegGrpRemvMem|SegQtdUsuGrpAcs|SegUsuAtivado|SegUsuCorrenteTemAcesso|SegUsuCria|SegUsuDatBlo|SegUsuDatExp|SegUsuDesbloqueia|SegUsuEmail|SegUsuExigeAltSenha|SegUsuGrpAcs|SegUsuGrpAcsÍndice|SegUsuNomeComp|SegUsuPolBloqueio|SegUsuPolDurSenha|SegUsuPolEsqSenha|SegUsuPolFrmSenha|SegUsuPolHisSenha|SegUsuSetaAtivado|SegUsuSetaDatExp|SegUsuSetaEmail|SegUsuSetaExigeAltSenha|SegUsuSetaGrpAcs|SegUsuSetaNaoExp|SegUsuSetaNomeComp|SegUsuSetaPolBloqueio|SegUsuSetaPolDurSenha|SegUsuSetaPolEsqSenha|SegUsuSetaPolFrmSenha|SegUsuSetaPolHisSenha|SegUsuSetaSenha|SegUsuUltLogon)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(HttpAdicionaExcecaoProxy|HttpAlteraAutenticacaoProxy|HttpAlteraCabecalhoRequisicao|HttpAlteraCodifCaracPadrao|HttpAlteraConfiguracaoProxy|HttpAlteraConfiguracaoSSL|HttpAlteraMostrarProgresso|HttpAlteraRedirecionamento|HttpDelete|HttpDeleteBody|HttpDesabilitaErroResposta|HttpDesabilitarCookies|HttpDesabilitaSNI|HttpDownload|HttpExcluiExcecaoProxy|HttpGet|HttpHabilitaErroResposta|HttpHabilitarCookies|HttpHabilitaSNI|HttpLeAutenticacaoProxy|HttpLeCabecalhoResposta|HttpLeCodigoResposta|HttpLeConfiguracaoProxy|HttpLeConfiguracaoSSL|HttpLeContadorExcecoesProxy|HttpLeExcecaoProxy|HttpLeMostrarProgresso|HttpLimpaExcecoesProxy|HttpNormalizaRetorno|HttpObjeto|HttpPatch|HttpPost|HttpPut|HttpSetAttachment|HttpSetaTimeout)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(Prop_ContemModulo|Prop_ContemSistema|Prop_ModuloAtivo|Prop_ModuloWeb|Prop_ObterCodigoCliente|Prop_ObterDataValidade|Prop_ObterDataValidadeModulo|Prop_ObterNomeCliente|Prop_ObterNomeModulo|Prop_ObterQtdInstanciasModWeb|Prop_ObterQtdLicencasModulo|Prop_ObterQtdModulos|Prop_ObterQtdUsuariosSistema)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(SQL_AbrirCursor|SQL_BOF|SQL_Criar|SQL_DefinirAlfa|SQL_DefinirBlob|SQL_DefinirBoleano|SQL_DefinirComando|SQL_DefinirData|SQL_DefinirFlutuante|SQL_DefinirInteiro|SQL_Destruir|SQL_EOF|SQL_FecharCursor|SQL_Proximo|SQL_RetornarAlfa|SQL_RetornarBlob|SQL_RetornarBoleano|SQL_RetornarData|SQL_RetornarFlutuante|SQL_RetornarInteiro|SQL_RetornarSeNulo|SQL_UsarAbrangencia|SQL_UsarSQLSenior2)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(WFEnviaResposta|WFInstanciaWorkflow|WFRetornaIdFluxo|WFRetornaNomeFluxo|WFRetornaNomeUsuario)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(ExecSP|ObtemValorParam)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(WFInstanciaWorkflow|WFEnviaResposta|WFRetornaNomeUsuario|WFRetornaIdFluxo|WFRetornaNomeFluxo)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(DateToDB|DeleteFieldSQL|DesCamLista|InsClauSQLCampoDireto|InsClauSQLField|InsClauSQLFrom|InsClauSQLGroupBy|InsClauSQLOrderBy|InsClauSQLWhere|InsSQLWhereSimples|MontarSQLHisCampo|MontarSQLHisCampoSeq|MontarSQLHistorico|MontarSQLHistoricoSeq|RetornaCampoAlfaTabela|RetornaCampoNumeroTabela|SubstituiFrom)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(AlfaParaInt|ArqExiste|AtualizaBarraProgresso|CaracterParaAlfa|CodData|ConverteCodificacaoString|ConverteMascara|ConverteParaMaiusculo|ConverteParaMinusculo|ConverteTexto|CopiarAlfa|CriarArquivoTemporario|DataHoje|DataHora|DecodData|DeletarAlfa|Desencriptar|Dividir|Encriptar|ExcluirArquivoTemporario|ExecProg|FinalizaBarraProgresso|FormatarData|GeraHash|GerarNonce|GerarPwdDigest|GeraSenha|GeraToken|HoraParaMinuto|IniciaBarraProgresso|IntParaAlfa|LerPosicaoAlfa|LinhasArquivo|ListaItem|ListaQuantidade|Mensagem|ObtemIdiomaAtivo|ObterVersaoSistema|OcultaBarraProgressoRelatorio|PosicaoAlfa|RemoveExpressoesProibidas|RestoDivisao|RetornaValorCFG|TamanhoAlfa|TrocaString|Truncar|VerificaAbaAtiva|VrfAbrA|VrfAbrN)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(WAdicionaListaErros|WAdicionanoHTML|WAlteraValorCampo|WCheckValCheckBox|WCheckValData|WCheckValDouble|WCheckValHora|WCheckValInteger|WCheckValString|WConsistePISCPF|WCountFields|WebCodificaHtml|WebCodificaJavaScript|WebCodificaUrl|WebValidaArquivo|WebValidaTodosArquivos|WebValorContexto|WErrodaListaErros|WInsSelecaodaLista|WInsSelecaodoBanco|WLerHTML|WLimpaListaErros|WQtdnaListaErros|WRemoteAddr|WReturnFieldsName|WSQLSenior2paraSQLNativo|WSQLSeniorparaSQLNativo|WStrtoJavaScript|WTextoParaFormatoHTML|WUltimoErrodaLista|WWriteCookie)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(Base64Decode|Base64Encode|DataHora|DataHoraUTC|FormatarData|ImportaWebServiceSSF|GerarNonce|GerarPwdDigest|WSInstanciaServico)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(ADAdicionaAtributoEntidade|ADAlteraEntidade|ADAlteraEntidadeDN|ADAlteraEntidadePorAtributos|ADAtribuiSenha|ADBuscaEntidade|ADBuscaEntidadeEx|ADCriaUsuario|ADDeletaEntidade|ADDeletaValorAtributo|ADFinalizaAlteracao|ADIniciaAlteracao|ADPegaValorAtributoEntidade)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(ICalAdicParticipante|ICalAgendar|ICalCancelar|ICalDefConteudo|ICalDefID|ICalDefLembrete|ICalDefLocalizacao|ICalDefOrganizador|ICalDefPeriodo|ICalLimparParticipantes|ICalNovo|ICalObtID)\\b"
+				},
+				{
+					"name": "entity.name.function.lsp",
+					"match": "(?<!\\.)(?i)\\b(FtpApagarArquivo|FtpApagarDiretorio|FtpConexao|FtpCriarDiretorio|FtpDownload|FtpListaItem|FtpListaItemDetalhes|FtpListaItemPermissoes|FtpListaQuantidade|FtpListar|FtpModoConexao|FtpModoErro|FtpModoTransferencia|FtpProxy|FtpRenomear|FtpSetaSFTP|FtpUltimoErro|FtpUpload)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.lsp"
+}

@@ -1,10 +1,12 @@
 {
 	"name": "lsp",
-	"version": "0.1.0",
-	"publisher": "Killer",
-	"engines": { "vscode": "*" },	
+	"version": "1.0.1",
+	"publisher": "Rodrigo 'Killer' Sanguanini",
+	"engines": { 
+		"vscode": "^1.77.0" 
+	},	
 	"categories": [
-		"Languages",
+		"Programming Languages",
 		"Snippets",
 		"Formatters",
 		"Other"
@@ -25,20 +27,26 @@
 		"url": "https://github.com/rodrigokiller/vscode-language-lsp/issues"
 	},
 	"contributes": {
-		"languages": [{
-			"id": "lsp",
-			"extensions": [ ".txt"],
-			"aliases": [ "lsp", "Linguagem Senior de Programação", "Senior" ],
-			"configuration": "./language-configuration.json"
-		}],
-		"snippets": [{
+		"languages": [
+			{
+				"id": "lsp",
+				"extensions": [ "lsp", "txt"],
+				"aliases": [ "lsp", "Linguagem Senior de Programação", "Senior" ],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"snippets": [
+			{
 				"language": "lsp",
 				"path": "./snippets/lsp.json"
-		}],
-		"grammars": [{
-			"language": "lsp",
-			"scopeName": "source.lsp",
-			"path": "./syntaxes/lsp.tmLanguage"
-		}]
+			}
+		],
+		"grammars": [
+			{
+				"language": "lsp",
+				"scopeName": "source.lsp",
+				"path": "./syntaxes/lsp.tmLanguage.json"
+			}
+		]
 	}
 }
