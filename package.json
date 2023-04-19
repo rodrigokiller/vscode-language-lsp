@@ -1,7 +1,7 @@
 {
 	"name": "lsp",
 	"version": "1.0.1",
-	"publisher": "Rodrigo 'Killer' Sanguanini",
+	"publisher": "Killer",
 	"engines": { 
 		"vscode": "^1.77.0" 
 	},	
