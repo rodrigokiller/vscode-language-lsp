@@ -20,3 +20,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## Versão 1.0.2
 
 - Pequenos ajustes 
+
+## Versão 1.0.3
+
+- Funções LSP e de Tecnologia (tais como SGI, relatório, cubo) adicionadas 

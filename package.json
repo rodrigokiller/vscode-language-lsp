@@ -1,6 +1,6 @@
 {
 	"name": "lsp",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "Killer",
 	"engines": { 
 		"vscode": "^1.77.0" 
