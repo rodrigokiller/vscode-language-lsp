@@ -1,6 +1,11 @@
 # LSP para Visual Studio Code
 
 Esta extensão adiciona o suporte à Linguagem Senior de Programação, também conhecida como LSP, ao Visual Studio Code. A extensão atualmente suporta:
+<p align="center" style="display:flex;gap:7px;justify-content:center;align-items:center;">
+  <img alt="Versão" src="https://img.shields.io/visual-studio-marketplace/v/killer.lsp">
+  <img alt="Classificaçao" src="https://img.shields.io/visual-studio-marketplace/r/killer.lsp">
+  <img alt="Instalações" src="https://img.shields.io/visual-studio-marketplace/i/killer.lsp">
+</p>
 
 * Colorização
 * Snippets (atalhos para trechos de códigos)
