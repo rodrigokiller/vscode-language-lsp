@@ -96,15 +96,15 @@
 			"patterns": [
 				{
 					"name": "keyword.operator.arithmetic.lsp",
-      		"match": "(?<!\\.)(?i)\\b(\\+|-|\\*|/|=|\\+\\+|--)\\b"
+					"match": "(?<!\\.)\\+|-|\\*|/|=|\\+\\+|--"
 				},
 				{
 					"name": "keyword.operator.lsp",
-					"match": "(?<!\\.)(?i)\\b(e|ou)\\b"
+					"match": "(?<!\\.)\\b(e|ou)\\b"
 				},
 				{
 					"name": "keyword.operator.logical.lsp",
-					"match": "(?<!\\.)(?i)\\b(=|>|<|<>|>=|<=|e|ou)\\b"
+					"match": "(?<!\\.)\\b(=|>|<|<>|>=|<=|e|ou)\\b"
 				}				
 			]
 		},
