@@ -164,7 +164,7 @@
 				},
 				{
 					"name": "invalid.deprecated.lsp",
-					"match": "(?<!\\.)(?i)\\b(LeMemListCcuFluCaixaCcu|LeMemListFluCaixaCcu|VerificaAbaAtiva|IsWFInitialized|SendWFResponse)\\b"
+					"match": "(?<!\\.)(?i)\\b(LeMemListCcuFluCaixaCcu|LeMemListFluCaixaCcu|IsWFInitialized|SendWFResponse)\\b"
 				},
 				{
 					"name": "entity.name.function.lsp",
