@@ -10,16 +10,15 @@
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
-        ["Inicio", "Fim"],
-        ["Inicio", "Fim;"]
+        ["/*", "*/"]
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
-        ["Inicio", "Fim"],
-        ["Inicio", "Fim;"]
+        ["@ ", " @"],
+        ["/*", "*/"],
         { "open": "\"", "close": "\"", "notIn": ["string"] }
     ],
     // symbols that can be used to surround a selection
@@ -27,6 +26,7 @@
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
+        ["@ ", " @"],
         { "open": "\"", "close": "\"", "notIn": ["string"] },
         { "open": "{", "close": "}", "notIn": ["string"] }
     ]
