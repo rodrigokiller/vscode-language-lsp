@@ -1,4 +1,28 @@
 {
+  "inicio": {
+    "prefix": "inicio",
+    "body": [
+      "inicio",
+        "\t$2",
+      "fim;"
+    ],
+    "description": "bloco de comandos inicio - fim"
+  },
+
+  "inicio senao": {
+    "prefix": "inicio",
+    "body": [
+      "inicio",
+        "\t$2",
+      "fim",
+      "senao",
+      "inicio",
+        "\t$3",
+      "fim;"
+    ],
+    "description": "bloco de comandos inicio - fim com senão"
+  },
+  
   "para": {
     "prefix": "para",
     "body": [
